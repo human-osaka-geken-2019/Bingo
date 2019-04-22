@@ -1,15 +1,14 @@
-#ifndef BINGO_H
+ï»¿#ifndef BINGO_H
 #define BINGO_H
 class Bingo {
 public:
 	Bingo();
 	~Bingo();
 	/// <summary>
-	/// ƒQ[ƒ€‚Ì€”õ
+	/// ã‚²ãƒ¼ãƒ ã®æº–å‚™
 	/// </summary>
 	void ReadyGame();
-	void Game();
-	void PassOnCard(void func());
+	void DrivingGame();
 	bool HaveBall() {
 		return (AppearedBalls == BALL);
 	}
@@ -44,31 +43,31 @@ private:
 
 
 	/// <summary>
-/// ƒrƒ“ƒSƒJ[ƒh‚Ì¶¬
+/// ãƒ“ãƒ³ã‚´ã‚«ãƒ¼ãƒ‰ã®ç”Ÿæˆ
 /// </summary>
 	void CreateBingoCard();
 	/// <summary>
-	/// ƒJ[ƒh‚Ì•\¦
+	/// ã‚«ãƒ¼ãƒ‰ã®è¡¨ç¤º
 	/// </summary>
 	void ShowCard();
 	/// <summary>
-	/// ’Š‘I‚³‚ê‚½”Ô†‚ÆƒJ[ƒh‚Ì”Ô†‚ÌÆ‡
+	/// æŠ½é¸ã•ã‚ŒãŸç•ªå·ã¨ã‚«ãƒ¼ãƒ‰ã®ç•ªå·ã®ç…§åˆ
 	/// </summary>
 	void HitCheck();
 	/// <summary>
-	/// ƒrƒ“ƒS‚Ì”»’è
+	/// ãƒ“ãƒ³ã‚´ã®åˆ¤å®š
 	/// </summary>
 	void BingoCheck();
 	/// <summary>
-	/// c•ûŒü‚Éƒrƒ“ƒS‚Ì”»’è
+	/// ç¸¦æ–¹å‘ã«ãƒ“ãƒ³ã‚´ã®åˆ¤å®š
 	/// </summary>
 	void LineCheck();
 	/// <summary>
-	/// Î‚ß•ûŒü‚Éƒrƒ“ƒS‚Ì”»’è
+	/// æ–œã‚æ–¹å‘ã«ãƒ“ãƒ³ã‚´ã®åˆ¤å®š
 	/// </summary>
 	void ObliqueCheck();
 	/// <summary>
-	/// ‰¡•ûŒü‚Éƒrƒ“ƒS‚Ì”»’è
+	/// æ¨ªæ–¹å‘ã«ãƒ“ãƒ³ã‚´ã®åˆ¤å®š
 	/// </summary>
 	void RowCheck();
 

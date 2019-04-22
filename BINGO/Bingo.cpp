@@ -1,4 +1,4 @@
-#include "Bingo.h"
+ï»¿#include "Bingo.h"
 #include <iostream>
 
 using std::cout;
@@ -24,7 +24,7 @@ void Bingo::ReadyGame()
 }
 
 void Bingo::CreateBingoCard() {
-	//ƒrƒ“ƒSƒJ[ƒh‚Ìì¬
+	//ãƒ“ãƒ³ã‚´ã‚«ãƒ¼ãƒ‰ã®ä½œæˆ
 	for (int i = 0; i < LINE_WIDTH; i++) {
 		for (int j = 0; j < LINE_WIDTH; j++) {
 			int BingoNum = rand() % 75 + 1;
@@ -72,7 +72,7 @@ void Bingo::DrivingGame()
 {
 	while (AppearedBalls < BALL) {
 		system("cls");
-		//”Ô†‚Ìƒhƒ[,‰ß‹‚Ìƒhƒ[‚Æ‚Ìd•¡ƒ`ƒFƒbƒN
+		//ç•ªå·ã®ãƒ‰ãƒ­ãƒ¼,éå»ã®ãƒ‰ãƒ­ãƒ¼ã¨ã®é‡è¤‡ãƒã‚§ãƒƒã‚¯
 		PicNum[AppearedBalls] = rand() % 75 + 1;
 		for (int g = 0; g < AppearedBalls; g++) {
 			if (PicNum[g] == PicNum[AppearedBalls]) {
@@ -82,23 +82,23 @@ void Bingo::DrivingGame()
 			}
 		}
 		if (PicNum[AppearedBalls] <= 15) {
-			cout << "B‚Ì" << PicNum[AppearedBalls] << "‚ª‚Å‚Ü‚µ‚½I\n" << endl;
+			cout << "Bã®" << PicNum[AppearedBalls] << "ãŒã§ã¾ã—ãŸï¼\n" << endl;
 		}
 		if (PicNum[AppearedBalls] <= 30 && PicNum[AppearedBalls] > 15) {
-			cout << "I‚Ì" << PicNum[AppearedBalls] << "‚ª‚Å‚Ü‚µ‚½I\n" << endl;
+			cout << "Iã®" << PicNum[AppearedBalls] << "ãŒã§ã¾ã—ãŸï¼\n" << endl;
 		}
 		if (PicNum[AppearedBalls] <= 45 && PicNum[AppearedBalls] > 30) {
-			cout << "N‚Ì" << PicNum[AppearedBalls] << "‚ª‚Å‚Ü‚µ‚½I\n" << endl;
+			cout << "Nã®" << PicNum[AppearedBalls] << "ãŒã§ã¾ã—ãŸï¼\n" << endl;
 		}
 		if (PicNum[AppearedBalls] <= 60 && PicNum[AppearedBalls] > 45) {
-			cout << "G‚Ì" << PicNum[AppearedBalls] << "‚ª‚Å‚Ü‚µ‚½I\n" << endl;
+			cout << "Gã®" << PicNum[AppearedBalls] << "ãŒã§ã¾ã—ãŸï¼\n" << endl;
 		}
 		if (PicNum[AppearedBalls] <= 75 && PicNum[AppearedBalls] > 60) {
-			cout << "O‚Ì" << PicNum[AppearedBalls] << "‚ª‚Å‚Ü‚µ‚½I\n" << endl;
+			cout << "Oã®" << PicNum[AppearedBalls] << "ãŒã§ã¾ã—ãŸï¼\n" << endl;
 		}
-		//ƒrƒ“ƒSƒJ[ƒhÄİ’è
+		//ãƒ“ãƒ³ã‚´ã‚«ãƒ¼ãƒ‰å†è¨­å®š
 		ShowCard();
-		cout << "Šùo”Ô†" << ends;
+		cout << "æ—¢å‡ºç•ªå·" << ends;
 		for (int num = 0; num < AppearedBalls; ++num) {
 			cout << PicNum[num] << ends;
 		}
@@ -112,26 +112,26 @@ void Bingo::DrivingGame()
 }
 
 void Bingo::HitCheck() {
-	//”Ô†‚ÆƒJ[ƒh‚Ìd•¡ƒ`ƒFƒbƒN•ŒŠ‚ ‚¯
+	//ç•ªå·ã¨ã‚«ãƒ¼ãƒ‰ã®é‡è¤‡ãƒã‚§ãƒƒã‚¯ï¼†ç©´ã‚ã‘
 	for (int i = 0; i < LINE_WIDTH; i++) {
 		for (int j = 0; j < LINE_WIDTH; j++) {
 			if (PicNum[AppearedBalls] == BingoCard[j][i]) {
 				BingoCard[j][i] = SPACE;
 				switch (i) {
 				case B:
-					cout << "B‚Ì" << PicNum[AppearedBalls] << "‚ª“–‚½‚èI\n" << ends;
+					cout << "Bã®" << PicNum[AppearedBalls] << "ãŒå½“ãŸã‚Šï¼\n" << ends;
 					break;
 				case I:
-					cout << "I‚Ì" << PicNum[AppearedBalls] << "‚ª“–‚½‚èI\n" << ends;
+					cout << "Iã®" << PicNum[AppearedBalls] << "ãŒå½“ãŸã‚Šï¼\n" << ends;
 					break;
 				case N:
-					cout << "N‚Ì" << PicNum[AppearedBalls] << "‚ª“–‚½‚èI\n" << ends;
+					cout << "Nã®" << PicNum[AppearedBalls] << "ãŒå½“ãŸã‚Šï¼\n" << ends;
 					break;
 				case G:
-					cout << "G‚Ì" << PicNum[AppearedBalls] << "‚ª“–‚½‚èI\n" << ends;
+					cout << "Gã®" << PicNum[AppearedBalls] << "ãŒå½“ãŸã‚Šï¼\n" << ends;
 					break;
 				case O:
-					cout << "O‚Ì" << PicNum[AppearedBalls] << "‚ª“–‚½‚èI\n" << ends;
+					cout << "Oã®" << PicNum[AppearedBalls] << "ãŒå½“ãŸã‚Šï¼\n" << ends;
 					break;
 				}
 			}
@@ -146,7 +146,7 @@ void Bingo::BingoCheck()
 	LineCheck();
 }
 void Bingo::LineCheck() {
-	//—ñ”»’è
+	//åˆ—åˆ¤å®š
 	int BingoChecker = 0;
 	for (int j = 0; j < 5; j++) {
 		BingoChecker = 0;
@@ -168,7 +168,7 @@ void Bingo::LineCheck() {
 void Bingo::ObliqueCheck() {
 
 	int BingoChecker = 0;
-	//Î‚ß”»’è ‰E‰º‚ª‚è
+	//æ–œã‚åˆ¤å®š å³ä¸‹ãŒã‚Š
 	int h = 0;
 	for (h; h < 5; h++) {
 		BingoChecker = 0;
@@ -184,7 +184,7 @@ void Bingo::ObliqueCheck() {
 		cout << "\nOBLIQUE\nREACH!" << endl;
 		BingoChecker = 0;
 	}
-	//Î‚ß”»’è ‰Eã‚ª‚è
+	//æ–œã‚åˆ¤å®š å³ä¸ŠãŒã‚Š
 	int h = 4;
 	for (int f = 0; f < 5; f++) {
 		BingoChecker = 0;
@@ -202,7 +202,7 @@ void Bingo::ObliqueCheck() {
 	}
 }
 void Bingo::RowCheck() {
-	//s”»’è
+	//è¡Œåˆ¤å®š
 	int BingoChecker = 0;
 	for (int i = 0; i < 5; i++) {
 		for (int j = 0; j < 5; j++) {

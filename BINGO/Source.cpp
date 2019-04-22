@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
@@ -11,12 +11,12 @@ int main() {
 	srand((unsigned int)time(NULL));
 	Bingo bingo;
 	bingo.ReadyGame();
-	//ƒrƒ“ƒSƒQ[ƒ€‹s
+	//ãƒ“ãƒ³ã‚´ã‚²ãƒ¼ãƒ é‚è¡Œ
 	getchar();
 	bingo.DrivingGame();
 	bool isEnd = false;
 	if (bingo.HaveBall()) {
-		std::cout << "‹Ê‚ªos‚­‚µ‚Ü‚µ‚½B\nI—¹‚µ‚Ü‚·" << std::endl;
+		std::cout << "ç‰ãŒå‡ºå°½ãã—ã¾ã—ãŸã€‚\nçµ‚äº†ã—ã¾ã™" << std::endl;
 		getchar();
 		isEnd = true;
 	}
