@@ -5,27 +5,18 @@
 
 #include "Bingo.h"
 
-using std::cout;
-using std::endl;
-using std::ends;
-
-
-
 
 int main() {
 
 	srand((unsigned int)time(NULL));
 	Bingo bingo;
-	bingo.CreateBingoCard();
-	bingo.OpenCenter();
-	bingo.ShowCard();
-	
+	bingo.ReadyGame();
 	//ビンゴゲーム遂行
 	getchar();
-	bingo.Game();
+	bingo.DrivingGame();
 	bool isEnd = false;
 	if (bingo.HaveBall()) {
-		cout << "玉が出尽くしました。\n終了します" << endl;
+		std::cout << "玉が出尽くしました。\n終了します" << std::endl;
 		getchar();
 		isEnd = true;
 	}

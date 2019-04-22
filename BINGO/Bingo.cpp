@@ -15,6 +15,14 @@ Bingo::~Bingo()
 {
 }
 
+void Bingo::ReadyGame()
+{
+	CreateBingoCard();
+	OpenCenter();
+	ShowCard();
+
+}
+
 void Bingo::CreateBingoCard() {
 	//ビンゴカードの作成
 	for (int i = 0; i < LINE_WIDTH; i++) {
@@ -60,7 +68,7 @@ void Bingo::ShowCard() {
 	cout << endl;
 }
 
-void Bingo::Game()
+void Bingo::DrivingGame()
 {
 	while (AppearedBalls < BALL) {
 		system("cls");
@@ -103,15 +111,6 @@ void Bingo::Game()
 
 }
 
-void Bingo::PassOnCard(void func())
-{
-	for (int i = 0; i < LINE_WIDTH; i++) {
-		for (int j = 0; j < LINE_WIDTH; j++) {
-			func();
-		}
-	}
-}
-
 void Bingo::HitCheck() {
 	//番号とカードの重複チェック＆穴あけ
 	for (int i = 0; i < LINE_WIDTH; i++) {
@@ -140,11 +139,13 @@ void Bingo::HitCheck() {
 	}
 
 }
-void Bingo::LineCheck() {
-	//ビンゴの判定
-//同一行、列もしくは斜めの０の数を調べる
+void Bingo::BingoCheck()
+{
 	ObliqueCheck();
 	RowCheck();
+	LineCheck();
+}
+void Bingo::LineCheck() {
 	//列判定
 	int BingoChecker = 0;
 	for (int j = 0; j < 5; j++) {
