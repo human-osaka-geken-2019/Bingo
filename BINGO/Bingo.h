@@ -1,5 +1,7 @@
 ﻿#ifndef BINGO_H
 #define BINGO_H
+#include <array>
+
 class Bingo {
 public:
 	Bingo();
@@ -26,14 +28,21 @@ private:
 	static const int SPACE = 0;
 	static const int LINE_WIDTH = 5;
 
+	const int CARD_NUM_LIMIT = 75;
+	const int LINE_NUM_RANGE = 15;
+	const int I_LINE_MIN = 30;
+	const int N_LINE_MIN = 45;
+	const int G_LINE_MIN = 60;
+
 	int LineMin = 1;
 	int LineMax = 15;
 	int OLcounter = 0;
 	int AppearedBalls = 0;
 
-	int PicNum[BALL];
+	std::array<int, BALL> PicNum;
 
 	int BingoCard[LINE_WIDTH][LINE_WIDTH]{
+	//!番号生成確認用初期値
 	{100,200,300,400,500},
 	{110,210,310,410,510},
 	{120,220,320,420,520},
@@ -43,8 +52,8 @@ private:
 
 
 	/// <summary>
-/// ビンゴカードの生成
-/// </summary>
+	/// ビンゴカードの生成
+	/// </summary>
 	void CreateBingoCard();
 	/// <summary>
 	/// カードの表示
@@ -61,7 +70,7 @@ private:
 	/// <summary>
 	/// 縦方向にビンゴの判定
 	/// </summary>
-	void LineCheck();
+	void ColumnCheck();
 	/// <summary>
 	/// 斜め方向にビンゴの判定
 	/// </summary>
